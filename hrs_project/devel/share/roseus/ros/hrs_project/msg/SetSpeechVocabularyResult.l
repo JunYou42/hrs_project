@@ -1,0 +1,1 @@
+/home/nao_a/ros/hrs_project/devel/.private/hrs_project/share/roseus/ros/hrs_project/msg/SetSpeechVocabularyResult.l

@@ -1,0 +1,22 @@
+#CREATE request parameters
+string joint_name
+string end_effector
+float64[] goal_6Dposition_Marker
+float64[] goal_6Dposition_Cloth
+float64[] goal_6Dposition 
+
+float64 SpeedorTime
+float64 axisMask
+int8 control_mod
+bool getMarker
+bool getMarker_Ground
+
+string cloth_color
+--- # keep 3!!!!! only 3!!!!!
+#CREATE response parameters
+
+float64 num
+bool RosePick_Ready
+bool bMarkerArrived
+string speechCommand
+

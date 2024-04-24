@@ -1,0 +1,8 @@
+prefix=/home/nao_a/ros/hrs_project/install
+
+Name: hrs_project
+Description: Description of hrs_project
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime actionlib_msgs

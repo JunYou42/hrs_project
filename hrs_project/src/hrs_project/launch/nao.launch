@@ -1,0 +1,29 @@
+<launch>
+  <!--
+  	This pushes the local PYTHONPATH into the launch file, so that the NaoQI API is found.
+    You need to add the Nao's API dir to your PYTHONPATH so that the modules are found.
+  -->
+  <env name="PYTHONPATH" value="$(env PYTHONPATH)" />
+
+  <!-- <arg name="nao_ip" default="$(optenv NAO_IP 127.0.0.1)" /> -->
+  <arg name="nao_ip" default="$(optenv NAO_IP 10.152.246.134)" />
+  <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
+
+  <node pkg="hrs_project" type="faceDetect.py" name="server_walk2Face" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen" launch-prefix = "xterm -e"/>
+
+  <node pkg="hrs_project" type="client" name="hrs_project" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen"/>
+ 
+  <node pkg="hrs_project" type="getSpeechCommand.py" name="server_SpeechCommand" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen" launch-prefix = "xterm -e"/>
+  <node pkg="hrs_project" type="dance_1.py" name="server_dance_1" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen" />
+  <node pkg="hrs_project" type="dance_2.py" name="server_dance_2" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen" />
+  <node pkg="hrs_project" type="dance_3.py" name="server_dance_3" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen" />
+ 
+
+  <node pkg="hrs_project" type="rosePick.py" name="RosePick_server" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen" launch-prefix = "xterm -e"/>
+  <node pkg="hrs_project" type="handOver.py" name="handOver_server" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen" />
+
+  <node pkg="hrs_project" type="clothPick.py" name="ClothPick_server" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen" launch-prefix = "xterm -e"/>
+  <!-- <node pkg="hrs_project" type="gotoMarker.py" name="GotoMarker_server" required="true" args="$(arg nao_ip) $(arg nao_port)" output="screen" launch-prefix = "xterm -e"/> -->
+
+
+</launch>

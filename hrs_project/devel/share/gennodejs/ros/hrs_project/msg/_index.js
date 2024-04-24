@@ -1,0 +1,1 @@
+/home/nao_a/ros/hrs_project/devel/.private/hrs_project/share/gennodejs/ros/hrs_project/msg/_index.js
